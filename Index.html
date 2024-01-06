@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My MINE?</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffffff; /* White background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .message {
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .heart {
+      color: red;
+    }
+    .response-buttons {
+      margin-top: 20px;
+    }
+    .response-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    .response-buttons button:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <img src="kittens.gif" alt="Two kittens in love" style="width: 200px;">
+    <h1>Hey VAAKU,</h1>
+    <p>I've written a special message for you:</p>
+    <p>
+      <span class="heart">❤️</span> Will you be <span class="heart">❤️</span><br>
+      <span class="heart">❤️</span> Mine? <span class="heart">❤️</span><br>
+      <span class="heart">❤️</span> RAHUL <span class="heart">❤️</span>
+    </p>
+    <p>I know you love kittens, and lucky for you i see you as one and have decided to adopt you.</p>
+    <p>What do you say?</p>
+    <div class="response-buttons">
+      <button onclick="reply('Yes')">Yes</button>
+      <button id="noButton" onclick="moveButton('noButton')">No</button>
+    </div>
+  </div>
+
+  <script>
+    function reply(answer) {
+      if (answer === 'Yes') {
+        window.location.href = 'cute_things.html'; // Redirect to cute_things.html
+      } else {
+        alert('I understand. Maybe some other time. Have a great day!');
+      }
+    }
+
+    function moveButton(buttonId) {
+      const button = document.getElementById(buttonId);
+      const maxWidth = window.innerWidth - 150; // Adjust this value as needed
+      const maxHeight = window.innerHeight - 150; // Adjust this value as needed
+
+      const newPosX = Math.floor(Math.random() * maxWidth);
+      const newPosY = Math.floor(Math.random() * maxHeight);
+
+      button.style.position = 'absolute';
+      button.style.left = newPosX + 'px';
+      button.style.top = newPosY + 'px';
+    }
+  </script>
+</body>
+</html>
